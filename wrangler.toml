@@ -1,8 +1,11 @@
 [build]
-command = "pnpm pages:build"
+command = "pnpm install && pnpm build"
 
 [site]
-bucket = ".vercel/output/static"
+bucket = "dist"
+
+[build.upload]
+format = "service-worker"
 
 [env.production]
 workers_dev = true
