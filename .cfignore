@@ -1,0 +1,12 @@
+.git
+.github
+node_modules
+.next/cache
+test
+__tests__
+*.test.*
+*.spec.*
+.env*
+.husky
+.vscode
+README.md
