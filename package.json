@@ -10,7 +10,7 @@
 		"start": "next start",
 		"format": "biome format --write ./src",
 		"install-deps": "pnpm install",
-		"pages:build": "npx @cloudflare/next-on-pages",
+		"pages:build": "npx @cloudflare/next-on-pages --experimental-minify",
 		"pages:deploy": "npm run build && npm run pages:build",
 		"pages:prepare": "pnpm install && pnpm build && pnpm pages:build"
 	},
