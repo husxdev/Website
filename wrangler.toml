@@ -1,2 +1,8 @@
 [build]
 command = "pnpm pages:build"
+
+[site]
+bucket = ".vercel/output/static"
+
+[env.production]
+workers_dev = true
