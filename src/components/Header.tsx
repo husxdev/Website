@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import { useSocket } from "@/hooks/SocketContext";
 import { motion, AnimatePresence } from "framer-motion";
 import UserArea from "./DiscordPresence";
+import Link from "next/link"; // Add this import
+import MusicPlayer from "./MusicPlayer"; // Add this import
 
 export default function Header() {
 	const [hamburgerTriggered, setHamburgerTriggered] = useState(false);
@@ -118,6 +120,7 @@ export default function Header() {
 						<div className="flex-grow flex justify-center zsm:w-2/4">
 							<div className="pl-4 zsm:pl-8 xsm:pl-0 xsm:mx-auto w-full flex justify-center items-center">
 								<div className="w-full max-w-[250px] flex justify-center">
+ 									<MusicPlayer />
 								</div>
 							</div>
 						</div>
@@ -181,17 +184,13 @@ export default function Header() {
 								</div>
 							</button>
 							<nav className="hidden lg:flex gap-2.5 items-center non-selectable">
-								<a
-									href="#"
-									onClick={(e) => {
-										e.preventDefault();
-										smoothScrollTo(0, 650);
-										setHamburgerTriggered(false);
-									}}
+								<Link
+									href="/"
+									onClick={() => setHamburgerTriggered(false)}
 									className="nav-link text-white/80 hover:text-white py-2 px-3 rounded-xl transition-all duration-300 hover:bg-white/5"
 								>
 									Home
-								</a>
+								</Link>
 								<a
 									href="#about"
 									onClick={(e) => {
@@ -220,6 +219,13 @@ export default function Header() {
 								>
 									Projects
 								</a>
+								<Link
+									href="/services"
+									onClick={() => setHamburgerTriggered(false)}
+									className="nav-link text-white/80 hover:text-white py-2 px-3 rounded-xl transition-all duration-300 hover:bg-white/5"
+								>
+									Services
+								</Link>
 								<div className="h-6 w-[1px] bg-gradient-to-b from-transparent via-white/20 to-transparent mx-1.5" />
 								<a
 									href="mailto:exodev@atums.world"
@@ -236,7 +242,7 @@ export default function Header() {
 											strokeLinecap="round"
 											strokeLinejoin="round"
 											strokeWidth="2"
-											d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 2 0 002 2z"
+											d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 2 0 002 2z"
 										/>
 									</svg>
 								</a>
@@ -277,17 +283,13 @@ export default function Header() {
 						>
 							<nav className="index-nav p-4 non-selectable">
 								<div className="flex flex-col non-selectable">
-									<a
-										href="#"
-										onClick={(e) => {
-											e.preventDefault();
-											smoothScrollTo(0, 800);
-											setHamburgerTriggered(false);
-										}}
+									<Link
+										href="/"
+										onClick={() => setHamburgerTriggered(false)}
 										className="hamburger-navlink text-white/80 hover:text-white py-2 hover:bg-white/10 transition-all duration-300 hover:text-shadow-[0_0_12px_rgba(255,255,255,0.7)] non-selectable"
 									>
 										Home
-									</a>
+									</Link>
 									<a
 										href="#about"
 										onClick={(e) => {
@@ -317,6 +319,13 @@ export default function Header() {
 									>
 										Projects
 									</a>
+									<Link
+										href="/services"
+										onClick={() => setHamburgerTriggered(false)}
+										className="hamburger-navlink text-white/80 hover:text-white py-2 hover:bg-white/10 transition-all duration-300 hover:text-shadow-[0_0_12px_rgba(255,255,255,0.7)] non-selectable"
+									>
+										Services
+									</Link>
 									<a
 										href="mailto:exodev@atums.world"
 										className="hamburger-navlink text-white/80 hover:text-white py-2 hover:bg-white/10 transition-all duration-300 hover:text-shadow-[0_0_12px_rgba(255,255,255,0.7)] non-selectable"
@@ -332,7 +341,7 @@ export default function Header() {
 													strokeLinecap="round"
 													strokeLinejoin="round"
 													strokeWidth="2"
-													d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+													d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 002 2v10a2 2 2 0 002 2z"
 												/>
 											</svg>
 											Contact
