@@ -30,9 +30,9 @@ export default function RootLayout({
 				<link rel="preload" href="/assets/background.svg" as="image" />
 				<link rel="preload" href="/assets/card.mp4" as="video" />
 			</head>
-			<body className="min-h-screen flex flex-col">
-				<SocketProvider>{children}</SocketProvider>
-			</body>
+				<body>
+					<SocketProvider>{children}</SocketProvider>
+				</body>
 		</html>
 	);
 }

@@ -8,17 +8,19 @@ import About from "@/components/About";
 import Projects from "@/components/Projects";
 
 export default function Home() {
-	return (
-		<>
-			<Background />
-			<SocketProvider>
-				<Header />
-			</SocketProvider>
-            <About />
-            <Projects />
-			<Footer />
-			<Analytics />
-			<SpeedInsights />
-		</>
-	);
+    return (
+        <div className="min-h-screen flex flex-col">
+            <Background />
+            <SocketProvider>
+                <Header />
+            </SocketProvider>
+            <div className="flex-1">
+                <About />
+                <Projects />
+            </div>
+            <Footer />
+            <Analytics />
+            <SpeedInsights />
+        </div>
+    );
 }
